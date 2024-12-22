@@ -1,0 +1,59 @@
+@font-face {
+  font-family: "lilitaone";
+  src: url("/assets/fonts/lilitaone-regular-webfont\ \(2\).ttf");
+}
+
+:root {
+  /* --color-legendary: #fff11e;
+  --color-mythic: #fe5e72;
+  --color-epic: #d850ff;
+  --color-superRare: #5ab3ff;
+  --color-rare: #68fd58; */
+  --color-background: #121212;
+  --color-text: #e0e0e0;
+  --color-accent: #febe22;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "lilitaone", sans-serif;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+body {
+  background-color: var(--color-background);
+  transition: all ease-in-out 0.5s;
+}
+
+header {
+  align-items: center;
+  display: flex;
+  height: 10vh;
+  justify-content: space-around;
+  padding: 1em;
+  width: 100%;
+}
+
+main {
+  border: 2px solid red;
+  height: auto;
+  width: 100%;
+}
+
+footer {
+  height: 10vh;
+  width: 100%;
+}
+
+.display_flex_center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.hidden {
+  display: none;
+}
