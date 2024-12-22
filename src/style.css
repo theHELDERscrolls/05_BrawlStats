@@ -38,7 +38,7 @@ header {
 }
 
 main {
-  border: 2px solid red;
+  /* border: 2px solid red; */
   height: auto;
   width: 100%;
 }
