@@ -1,13 +1,10 @@
-export let brawlersInfo = [];
-
 export const fetchBrawlersInfo = async () => {
   try {
     const res = await fetch("https://api.brawlify.com/v1/brawlers");
     const data = await res.json();
-    brawlersInfo = data.list || data;
-
-    brawlersInfo = brawlersInfo.map((brawler) => ({
+    return (data.list || data).map((brawler) => ({
       id: brawler.id,
+      portrait: `https://raw.githubusercontent.com/Brawlify/CDN/master/brawlers/portraits/${brawler.id}.png`,
       name: brawler.name,
       image: brawler.imageUrl,
       emjoi: brawler.imageUrl3,
@@ -27,9 +24,9 @@ export const fetchBrawlersInfo = async () => {
       second_GadgetDescription: brawler.gadgets[1]?.descriptionHtml,
       second_GadgetImage: brawler.gadgets[1]?.imageUrl,
     }));
-    console.log(brawlersInfo); //! <--- Remove this line
   } catch (error) {
     console.error(error);
     alert("An error occurred while fetching the data. Please try again later.");
+    return [];
   }
 };
