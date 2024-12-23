@@ -1,4 +1,4 @@
-//! ESTÁ MAL LA RUTA!!!!!!!!!!!!!!!! import "./CharacterCard.css";
+import "./CharacterCard.css";
 
 import { fetchBrawlersInfo } from "../../utils/getBrawlersInfo.js";
 
@@ -11,8 +11,12 @@ export const characterCard = async () => {
 
   for (const brawler of brawlers) {
     card += `
-    <div class="card-container">
-        <img src="${brawler.portrait}" alt="${brawler.name}" />
+    <div class="border-light" style="background-color: ${brawler.rarityColor}">
+        <div class="a-card-face">
+            <img src="${brawler.portrait}" alt="${brawler.name}"/>
+            <h3>${brawler.name}</h3>
+            <p>${brawler.description}</p>
+        </div>
     </div>
     `;
   }
