@@ -3,6 +3,8 @@ import "./CharacterCard.css";
 import { fetchBrawlersInfo } from "../../utils/getBrawlersInfo.js";
 
 export const characterCard = async () => {
+  const section = document.createElement("section");
+  section.id = "brawlers-cards";
   const brawlers = await fetchBrawlersInfo();
   console.log(brawlers);
 
@@ -11,14 +13,14 @@ export const characterCard = async () => {
 
   for (const brawler of brawlers) {
     card += `
-    <div class="border-light" style="background-color: ${brawler.rarityColor}">
-        <div class="a-card-face">
-            <img src="${brawler.portrait}" alt="${brawler.name}"/>
-            <h3>${brawler.name}</h3>
-            <p>${brawler.description}</p>
-        </div>
-    </div>
+      <div class="${brawler.rarityName.toLowerCase()} a-card-face">
+        <img src="${brawler.portrait}" alt="${brawler.name}"/>
+        <h3>${brawler.name}</h3>
+        <p>${brawler.description}</p>
+      </div>
     `;
   }
-  return card;
+
+  section.innerHTML = card;
+  return section;
 };

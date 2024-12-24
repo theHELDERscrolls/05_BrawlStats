@@ -4,11 +4,6 @@
 }
 
 :root {
-  /* --color-legendary: #fff11e;
-  --color-mythic: #fe5e72;
-  --color-epic: #d850ff;
-  --color-superRare: #5ab3ff;
-  --color-rare: #68fd58; */
   --color-background: #121212;
   --color-text: #e0e0e0;
   --color-accent: #febe22;
@@ -38,7 +33,6 @@ header {
 }
 
 main {
-  /* border: 2px solid red; */
   height: auto;
   width: 100%;
 }

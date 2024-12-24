@@ -7,5 +7,5 @@ export const Brawlers = async () => {
   const main = document.querySelector("main");
   pageCleaner(main);
   const cardsHTML = await characterCard();
-  main.innerHTML = cardsHTML;
+  main.appendChild(cardsHTML);
 };
