@@ -14,9 +14,11 @@ export const characterCard = async () => {
   for (const brawler of brawlers) {
     card += `
       <div class="${brawler.rarityName.toLowerCase()} a-card-face">
-        <img src="${brawler.portrait}" alt="${brawler.name}"/>
-        <h3>${brawler.name}</h3>
-        <p>${brawler.description}</p>
+        <div class="portrait-container">
+          <img src="${brawler.portrait}" alt="${brawler.name}"/>
+          <h3>${brawler.name}</h3>
+        </div>
+        <p class="hidden">${brawler.description}</p>
       </div>
     `;
   }

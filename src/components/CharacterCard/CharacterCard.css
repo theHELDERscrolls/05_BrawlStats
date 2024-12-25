@@ -24,62 +24,239 @@
 /* Aspectos generales de las cartas */
 
 #brawlers-cards {
+  align-items: center;
   display: grid;
   gap: 2em;
-  align-items: center;
   justify-content: center;
 }
 
 .a-card-face {
-  padding: 2em;
-  width: 500px;
-  background: black;
+  background: var(--color-background);
+  border: 2px solid var(--color-text);
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  padding: 2px;
   position: relative;
-  img {
-    width: 200px;
-    height: auto;
-    object-fit: cover;
-  }
+  width: 350px;
 
-  h3,
+  transition: all 0.5s ease;s
+
   p {
     color: var(--color-text);
     font-weight: 100;
-    padding: 0.5em;
+  }
+}
+
+.portrait-container {
+  background-color: var(--color-background);
+  border-radius: 6px;
+  display: flex;
+  align-items: end;
+
+  img {
+    border-radius: 8px;
+    height: auto;
+    object-fit: cover;
+    width: 200px;
+  }
+
+  h3 {
+    position: absolute;
+    background-color: var(--color-text);
+    bottom: -5px;
+    right: -5px;
+    padding: 0.1rem 0.5rem;
+    font-size: 1.5rem;
+    border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: 2px 2px 0px black;
   }
 }
 
 /* Aspecto específico de cada clase */
 
-.legendary {
+.legendary::after,
+.legendary::before {
+  background-image: conic-gradient(
+    from var(--angle),
+    transparent 50%,
+    var(--legendary)
+  );
+  border-radius: 12px;
+  content: "";
+  height: 100%;
+  left: 50%;
+  opacity: 0;
+  padding: 5px;
+  position: absolute;
+  top: 50%;
+  translate: -50% -50%;
+  width: 100%;
+  z-index: -1;
+
+  animation: rotationalBorder 5s linear infinite;
+}
+
+.legendary::before {
+  filter: blur(0.5rem);
+  opacity: 0;
 }
 
 .mythic::after,
 .mythic::before {
+  background-image: conic-gradient(
+    from var(--angle),
+    transparent 50%,
+    var(--mythic)
+  );
+  border-radius: 12px;
   content: "";
-  position: absolute;
   height: 100%;
-  width: 100%;
-  background-image: conic-gradient(from var(--angle), transparent 50%, var(--mythic));
-  top: 50%;
   left: 50%;
-  translate: -50% -50%;
-  z-index: -1;
+  opacity: 0;
   padding: 5px;
+  position: absolute;
+  top: 50%;
+  translate: -50% -50%;
+  width: 100%;
+  z-index: -1;
 
-  animation: rotationalBorder 2s linear infinite;
+  animation: rotationalBorder 5s linear infinite;
 }
 
 .mythic::before {
-  filter: blur(1.5rem);
-  opacity: 0.5;
+  filter: blur(0.5rem);
+  opacity: 0;
+}
+
+.epic::after,
+.epic::before {
+  background-image: conic-gradient(
+    from var(--angle),
+    transparent 50%,
+    var(--epic)
+  );
+  border-radius: 12px;
+  content: "";
+  height: 100%;
+  left: 50%;
+  opacity: 0;
+  padding: 5px;
+  position: absolute;
+  top: 50%;
+  translate: -50% -50%;
+  width: 100%;
+  z-index: -1;
+
+  animation: rotationalBorder 5s linear infinite;
+}
+
+.epic::before {
+  filter: blur(0.5rem);
+  opacity: 0;
+}
+
+.superRare::after,
+.superRare::before {
+  background-image: conic-gradient(
+    from var(--angle),
+    transparent 50%,
+    var(--superRare)
+  );
+  border-radius: 12px;
+  content: "";
+  height: 100%;
+  left: 50%;
+  opacity: 0;
+  padding: 5px;
+  position: absolute;
+  top: 50%;
+  translate: -50% -50%;
+  width: 100%;
+  z-index: -1;
+
+  animation: rotationalBorder 5s linear infinite;
+}
+
+.superRare::before {
+  filter: blur(0.5rem);
+  opacity: 0;
+}
+
+.rare::after,
+.rare::before,
+.common::after,
+.common::before {
+  background-image: conic-gradient(
+    from var(--angle),
+    transparent 50%,
+    var(--rare)
+  );
+  border-radius: 12px;
+  content: "";
+  height: 100%;
+  left: 50%;
+  opacity: 0;
+  padding: 5px;
+  position: absolute;
+  top: 50%;
+  translate: -50% -50%;
+  width: 100%;
+  z-index: -1;
+
+  animation: rotationalBorder 5s linear infinite;
+}
+
+.rare::before,
+.common::before {
+  filter: blur(0.5rem);
+  opacity: 0;
+}
+
+.legendary:hover::after,
+.legendary:hover::before,
+.mythic:hover::after,
+.mythic:hover::before,
+.epic:hover::after,
+.epic:hover::before,
+.superRare:hover::after,
+.superRare:hover::before,
+.rare:hover::after,
+.rare:hover::before,
+.common:hover::after,
+.common:hover::before {
+  opacity: 1;
+}
+
+.legendary {
+  .portrait-container:hover {
+    background-color: var(--legendary);
+  }
+}
+
+.mythic {
+  .portrait-container:hover {
+    background-color: var(--mythic);
+  }
 }
 
 .epic {
+  .portrait-container:hover {
+    background-color: var(--epic);
+  }
 }
 
 .superRare {
+  .portrait-container:hover {
+    background-color: var(--superRare);
+  }
 }
 
-.rare {
+.rare,
+.common {
+  .portrait-container:hover {
+    background-color: var(--rare);
+  }
 }
