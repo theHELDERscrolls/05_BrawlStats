@@ -1,4 +1,4 @@
-import "./CharacterCard.css";
+import "./a_face_CharacterCard.css";
 
 import { fetchBrawlersInfo } from "../../utils/getBrawlersInfo.js";
 
@@ -13,12 +13,14 @@ export const characterCard = async () => {
 
   for (const brawler of brawlers) {
     card += `
-      <div class="${brawler.rarityName.toLowerCase()} a-card-face">
+      <div class="${brawler.rarityName
+        .toLowerCase()
+        .replace(/\s+/g, "")} a-card-face">
         <div class="portrait-container">
           <img src="${brawler.portrait}" alt="${brawler.name}"/>
           <h3>${brawler.name}</h3>
         </div>
-        <p class="hidden">${brawler.description}</p>
+        <p class="">${brawler.description}</p>
       </div>
     `;
   }

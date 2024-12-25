@@ -1,0 +1,7 @@
+#brawlers-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 350px);
+  justify-content: center;
+  gap: 3rem;
+  padding: 1rem 5rem;
+}
