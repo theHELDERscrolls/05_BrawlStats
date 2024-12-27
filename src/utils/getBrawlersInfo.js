@@ -8,7 +8,7 @@ export const fetchBrawlersInfo = async () => {
       model: `https://raw.githubusercontent.com/Brawlify/CDN/master/brawlers/models/${brawler.id}.png`,
       name: brawler.name,
       image: brawler.imageUrl,
-      emjoi: brawler.imageUrl3,
+      emoji: brawler.imageUrl3,
       rarityName: brawler.rarity.name,
       rarityColor: brawler.rarity.color,
       description: brawler.descriptionHtml,

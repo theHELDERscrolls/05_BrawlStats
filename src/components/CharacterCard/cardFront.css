@@ -22,18 +22,42 @@
 }
 
 /* Aspectos generales de las cartas */
+.container {
+  height: 280px;
+  width: 350px;
+  perspective: 1000px;
+}
 
-.a-card-face {
-  background: var(--color-background);
-  border: 2px solid var(--color-text);
-  border-radius: 10px;
+.card {
+  height: 100%;
+  width: 100%;
+  position: relative;
   cursor: pointer;
+  transform-style: preserve-3d;
+
+  transition: all 1s ease;
+}
+
+.container:active > .card {
+  transform: rotateY(180deg);
+}
+
+.front,
+.back {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+/* Frontal de la carta */
+.front {
+  background: var(--color-background);
+  border-radius: 10px;
+  border: 2px solid var(--color-text);
   display: flex;
   flex-direction: column;
   padding: 2px;
-  position: relative;
-  width: 350px;
-  min-height: 280px;
 
   transition: all 0.5s ease;
 
@@ -44,6 +68,7 @@
   }
 }
 
+/* Cuadro de personje y nombre */
 .portrait-container {
   background-color: var(--color-background);
   border-radius: 6px;
