@@ -25,7 +25,9 @@ export const characterCard = async () => {
             </div>
             <p>${brawler.description}</p>
           </div>
-          <div class="${brawler.rarityName} back">
+          <div class="${brawler.rarityName
+            .toLowerCase()
+            .replace(/\s+/g, "")} back">
             <div class="character-name">
               <img src="${brawler.emoji}" alt="${brawler.name}"/>
               <h3>${brawler.name}</h3>

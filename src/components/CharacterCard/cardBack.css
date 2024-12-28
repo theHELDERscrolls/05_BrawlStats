@@ -1,3 +1,12 @@
+@keyframes neon {
+  0% {
+    box-shadow: 0 0 5px var(--neon-color, #fff);
+  }
+  100% {
+    box-shadow: 0 0 15px var(--neon-color, #fff);
+  }
+}
+
 .back {
   background: var(--color-background);
   border-radius: 10px;
@@ -12,9 +21,64 @@
 
   h3,
   h4 {
-    background-color: var(--color-background);
     color: var(--color-text);
     font-weight: 100;
+  }
+}
+
+.legendary.back {
+  --neon-color: var(--legendary);
+  animation: neon 1.5s infinite alternate;
+
+  .character-name {
+    h4 {
+      color: var(--legendary);
+    }
+  }
+}
+
+.mythic.back {
+  --neon-color: var(--mythic);
+  animation: neon 1.5s infinite alternate;
+
+  .character-name {
+    h4 {
+      color: var(--mythic);
+    }
+  }
+}
+
+.epic.back {
+  --neon-color: var(--epic);
+  animation: neon 1.5s infinite alternate;
+
+  .character-name {
+    h4 {
+      color: var(--epic);
+    }
+  }
+}
+
+.superrare.back {
+  --neon-color: var(--superRare);
+  animation: neon 1.5s infinite alternate;
+
+  .character-name {
+    h4 {
+      color: var(--superRare);
+    }
+  }
+}
+
+.rare.back,
+.common.back {
+  --neon-color: var(--rare);
+  animation: neon 1.5s infinite alternate;
+
+  .character-name {
+    h4 {
+      color: var(--rare);
+    }
   }
 }
 
@@ -22,10 +86,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 1em;
+  height: 100%;
+  width: 100%;
 
   img {
-    height: 100px;
+    height: 50px;
     width: auto;
+  }
+
+  h4 {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: var(--color-text);
+    font-style: italic;
   }
 }
 
@@ -35,7 +110,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 1em;
+  height: 100%;
+  width: 100%;
 }
 
 .first-star-power,
@@ -54,8 +130,4 @@
     height: auto;
     width: 30px;
   }
-}
-
-.back .legendary {
-  box-shadow: 0px 0px 5px var(--legendary);
 }

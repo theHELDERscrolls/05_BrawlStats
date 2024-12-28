@@ -35,11 +35,26 @@
   cursor: pointer;
   transform-style: preserve-3d;
 
-  transition: all 1s ease;
+  transition: all 0.5s ease;
 }
 
 .container:active > .card {
   transform: rotateY(180deg);
+
+  .legendary:hover::after,
+  .legendary:hover::before,
+  .mythic:hover::after,
+  .mythic:hover::before,
+  .epic:hover::after,
+  .epic:hover::before,
+  .superrare:hover::after,
+  .superrare:hover::before,
+  .rare:hover::after,
+  .rare:hover::before,
+  .common:hover::after,
+  .common:hover::before {
+    opacity: 0;
+  }
 }
 
 .front,
