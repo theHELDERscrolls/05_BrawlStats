@@ -1,0 +1,15 @@
+.info-popup {
+    background-color: red;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+/* tenemos que averiguar como narices hacer que se salga del
+contenedor padre, de modo que ocupe parte de la pantalla.
+Tras esto, podemos pensar en el eventListener sin problema, será
+similar al que ya tenemos con el clic en la propia tarjeta.
+Tened en cuenta que cuando hagamos clic en el h4 que será el que
+hará que salte el popup, la tarjeta no se debe voltear. Esto puede
+pasar, pero creo que si metemos los h4 con "z-index: 2" deberían
+superponerse a cualquier elemento en el que estén, haciendo que el
+clic en ellos no voltee la carta. */

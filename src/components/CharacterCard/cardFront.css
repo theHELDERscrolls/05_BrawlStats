@@ -23,7 +23,7 @@
 
 /* Aspectos generales de las cartas */
 .container {
-  height: 280px;
+  height: 300px;
   width: 350px;
   perspective: 1000px;
 }
@@ -38,7 +38,7 @@
   transition: all 0.5s ease;
 }
 
-.container:active > .card {
+.card.flipped {
   transform: rotateY(180deg);
 
   .legendary:hover::after,

@@ -1,5 +1,6 @@
 import "./cardFront.css";
 import "./cardBack.css";
+import "./popup.css"
 
 import { fetchBrawlersInfo } from "../../utils/getBrawlersInfo.js";
 
@@ -39,13 +40,24 @@ export const characterCard = async () => {
       brawler.first_StarPower
     }"/>
                 <h4>${brawler.first_StarPower}</h4>
+                <p class="info-popup">${brawler.first_StarPowerDescription}</p>
               </div>
               <div class="second-star-power">
                 <img src="${brawler.second_StarPowerImage}" alt="${
       brawler.second_StarPower
     }"/>
                 <h4>${brawler.second_StarPower}</h4>
+                <p class="info-popup">${brawler.second_StarPowerDescription}</p>
               </div>
+               ${
+                 brawler.third_StarPower
+                   ? `<div class="third-star-power">
+                      <img src="${brawler.third_StarPowerImage}" alt="${brawler.third_StarPower}"/>
+                      <h4>${brawler.third_StarPower}</h4>
+                      <p class="info-popup">${brawler.third_StarPowerDescription}</p>
+                    </div>`
+                   : ""
+               }
             </div>
             <div class="gadgets">
               <div class="first-gadget">
@@ -53,13 +65,17 @@ export const characterCard = async () => {
       brawler.first_Gadget
     }"/>
                 <h4>${brawler.first_Gadget}</h4>
+                <p class="info-popup">${brawler.first_GadgetDescription}</p>
               </div>
-              <div class="second-gadget">
-                <img src="${brawler.second_GadgetImage}" alt="${
-      brawler.second_Gadget
-    }"/>
-                <h4>${brawler.second_Gadget}</h4>
-              </div>
+              ${
+                brawler.second_Gadget
+                  ? `<div class="second-gadget">
+                      <img src="${brawler.second_GadgetImage}" alt="${brawler.second_Gadget}"/>
+                      <h4>${brawler.second_Gadget}</h4>
+                      <p class="info-popup">${brawler.second_GadgetDescription}</p>
+                    </div>`
+                  : ""
+              }
             </div>
           </div>
         </div>
@@ -68,5 +84,17 @@ export const characterCard = async () => {
   }
 
   section.innerHTML = card;
+
+  // Flip effect
+  const cards = section.querySelectorAll(".card");
+
+  cards.forEach((card) => {
+    card.addEventListener("click", () => {
+      card.classList.toggle("flipped");
+    });
+  });
+
+  // Descriptions popups
+
   return section;
 };
