@@ -1,7 +1,12 @@
+body {
+  background-color: #044cc1;
+  background-image: url("https://www.transparenttextures.com/patterns/60-lines.png");
+}
+
 #brawlers-cards {
   display: grid;
+  gap: 3rem;
   grid-template-columns: repeat(auto-fit, 350px);
   justify-content: center;
-  gap: 3rem;
-  padding: 1rem 5rem;
+  margin-top: 3rem;
 }

@@ -5,7 +5,6 @@ export const fetchBrawlersInfo = async () => {
     return (data.list || data).map((brawler) => ({
       id: brawler.id,
       portrait: `https://raw.githubusercontent.com/Brawlify/CDN/master/brawlers/portraits/${brawler.id}.png`,
-      //? model: `https://raw.githubusercontent.com/Brawlify/CDN/master/brawlers/models/${brawler.id}.png`,
       name: brawler.name,
       image: brawler.imageUrl,
       emoji: brawler.imageUrl3,
@@ -44,8 +43,6 @@ export const fetchBrawlersInfo = async () => {
   } catch (error) {
     console.error(error);
     alert("An error occurred while fetching the data. Please try again later.");
-
-    //! Check arrya assets and configuration??????????????????
     return [];
   }
 };
