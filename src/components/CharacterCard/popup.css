@@ -1,15 +1,30 @@
 .info-popup {
-    background-color: red;
-    position: absolute;
-    top: 0;
-    left: 0;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: var(--color-text);
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--neon-color, #fff);
+  white-space: nowrap;
+  text-wrap: wrap;
+  opacity: 0;
+  visibility: hidden;
+  width: 250px;
+  height: auto;
+  z-index: 2;
+  font-weight: 100;
+
+  transform: translateY(-10px);
+  transition: opacity 0.3s, transform 0.3s;
 }
-/* tenemos que averiguar como narices hacer que se salga del
-contenedor padre, de modo que ocupe parte de la pantalla.
-Tras esto, podemos pensar en el eventListener sin problema, será
-similar al que ya tenemos con el clic en la propia tarjeta.
-Tened en cuenta que cuando hagamos clic en el h4 que será el que
-hará que salte el popup, la tarjeta no se debe voltear. Esto puede
-pasar, pero creo que si metemos los h4 con "z-index: 2" deberían
-superponerse a cualquier elemento en el que estén, haciendo que el
-clic en ellos no voltee la carta. */
+
+.first-star-power:hover .info-popup,
+.second-star-power:hover .info-popup,
+.third-star-power:hover .info-popup,
+.first-gadget:hover .info-popup,
+.second-gadget:hover .info-popup {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-35px);
+  animation: neon 1.5s infinite alternate;
+}

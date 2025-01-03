@@ -1,6 +1,6 @@
 import "./cardFront.css";
 import "./cardBack.css";
-import "./popup.css"
+import "./popup.css";
 
 import { fetchBrawlersInfo } from "../../utils/getBrawlersInfo.js";
 
@@ -40,14 +40,18 @@ export const characterCard = async () => {
       brawler.first_StarPower
     }"/>
                 <h4>${brawler.first_StarPower}</h4>
-                <p class="info-popup">${brawler.first_StarPowerDescription}</p>
+                <p class="info-popup">${
+                  brawler.first_StarPowerDescription
+                }</p>
               </div>
               <div class="second-star-power">
                 <img src="${brawler.second_StarPowerImage}" alt="${
       brawler.second_StarPower
     }"/>
                 <h4>${brawler.second_StarPower}</h4>
-                <p class="info-popup">${brawler.second_StarPowerDescription}</p>
+                <p class="info-popup">${
+                  brawler.second_StarPowerDescription
+                }</p>
               </div>
                ${
                  brawler.third_StarPower
@@ -65,7 +69,9 @@ export const characterCard = async () => {
       brawler.first_Gadget
     }"/>
                 <h4>${brawler.first_Gadget}</h4>
-                <p class="info-popup">${brawler.first_GadgetDescription}</p>
+                <p class="info-popup">${
+                  brawler.first_GadgetDescription
+                }</p>
               </div>
               ${
                 brawler.second_Gadget
@@ -94,7 +100,40 @@ export const characterCard = async () => {
     });
   });
 
-  // Descriptions popups
+  /* Al hacer clic en cualquier parte de la carta, esta se voltea, excepto en los
+  elementos que se indicam (star powers y gadgets). */
+  cards.forEach((card) => {
+    card.addEventListener("click", (e) => {
+      if (
+        e.target.closest(
+          ".first-star-power, .second-star-power, .third-star-power, .first-gadget, .second-gadget"
+        )
+      ) {
+        card.classList.toggle("flipped");
+      }
+    });
+  });
+
+  //! Descriptions popups ERASE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  // const elements = section.querySelectorAll(
+  //   ".first-star-power, .second-star-power, .third-star-power, .first-gadget, .second-gadget"
+  // );
+
+  // elements.forEach((element) => {
+  //   element.addEventListener("mouseover", (e) => {
+  //     e.stopPropagation();
+  //     element.querySelectorAll(".info-popup").forEach((popup) => {
+  //       popup.classList.toggle("hidden");
+  //     });
+  //   });
+  // });
+
+  // section.addEventListener("mouseover", (e) => {
+  //   const closePopups = section.querySelectorAll(".info-popup");
+  //   closePopups.forEach((popup) => {
+  //     popup.classList.add("hidden");
+  //   });
+  // });
 
   return section;
 };
