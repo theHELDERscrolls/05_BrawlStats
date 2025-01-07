@@ -1,18 +1,17 @@
 .info-popup {
-  position: absolute;
   background-color: rgba(0, 0, 0, 0.9);
-  color: var(--color-text);
-  padding: 10px;
   border-radius: 8px;
   border: 1px solid var(--neon-color, #fff);
-  white-space: nowrap;
-  text-wrap: wrap;
+  color: var(--color-text);
+  font-weight: 100;
+  height: auto;
   opacity: 0;
+  padding: 10px;
+  position: absolute;
+  text-wrap: wrap;
   visibility: hidden;
   width: 250px;
-  height: auto;
   z-index: 2;
-  font-weight: 100;
 
   transform: translateY(-10px);
   transition: opacity 0.3s, transform 0.3s;
@@ -25,6 +24,7 @@
 .second-gadget:hover .info-popup {
   opacity: 1;
   visibility: visible;
+
   transform: translateY(-35px);
   animation: neon 1.5s infinite alternate;
 }

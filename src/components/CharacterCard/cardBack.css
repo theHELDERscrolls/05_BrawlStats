@@ -11,10 +11,7 @@
   background: var(--color-text);
   border-radius: 10px;
   border: 2px solid var(--color-background);
-  display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
 
   transform: rotateY(180deg);
   transition: all 0.5s ease;
@@ -89,13 +86,10 @@
 }
 
 .character-name {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   gap: 1em;
   height: 100%;
-  width: 100%;
   padding-top: 1em;
+  width: 100%;
 
   img {
     height: 75px;
@@ -121,9 +115,6 @@
 
 .star-powers,
 .gadgets {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100%;
   width: 100%;
   gap: 1em;
@@ -135,17 +126,14 @@
 .third-star-power,
 .first-gadget,
 .second-gadget {
-  border: 2px solid var(--color-background);
-  border-radius: 50px;
   background: white;
+  border-radius: 50px;
+  border: 2px solid var(--color-background);
   box-shadow: 2px 2px 0px var(--color-background);
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
+  height: 100%;
   padding: 5px 10px;
+  width: 100%;
 
   transition: all 0.2s ease-in-out;
 

@@ -8,7 +8,7 @@ export const characterCard = async () => {
   const section = document.createElement("section");
   section.id = "brawlers-cards";
   const brawlers = await fetchBrawlersInfo();
-  console.log(brawlers);
+  // console.log(brawlers);
 
   // Creamos dinámicamente el HTML
   let card = "";
@@ -28,21 +28,21 @@ export const characterCard = async () => {
           </div>
           <div class="${brawler.rarityName
             .toLowerCase()
-            .replace(/\s+/g, "")} back">
-            <div class="character-name">
+            .replace(/\s+/g, "")} back display_flex_center">
+            <div class="character-name display_flex_center">
               <img src="${brawler.emoji}" alt="${brawler.name}"/>
               <h3>${brawler.name}</h3>
               <h4>${brawler.rarityName}</h4>
             </div>
-            <div class="star-powers">
-              <div class="first-star-power">
+            <div class="star-powers display_flex_center">
+              <div class="first-star-power display_flex_center">
                 <img src="${brawler.first_StarPowerImage}" alt="${
       brawler.first_StarPower
     }"/>
                 <h4>${brawler.first_StarPower}</h4>
                 <p class="info-popup">${brawler.first_StarPowerDescription}</p>
               </div>
-              <div class="second-star-power">
+              <div class="second-star-power display_flex_center">
                 <img src="${brawler.second_StarPowerImage}" alt="${
       brawler.second_StarPower
     }"/>
@@ -51,7 +51,7 @@ export const characterCard = async () => {
               </div>
                ${
                  brawler.third_StarPower
-                   ? `<div class="third-star-power">
+                   ? `<div class="third-star-power display_flex_center">
                       <img src="${brawler.third_StarPowerImage}" alt="${brawler.third_StarPower}"/>
                       <h4>${brawler.third_StarPower}</h4>
                       <p class="info-popup">${brawler.third_StarPowerDescription}</p>
@@ -59,8 +59,8 @@ export const characterCard = async () => {
                    : ""
                }
             </div>
-            <div class="gadgets">
-              <div class="first-gadget">
+            <div class="gadgets display_flex_center">
+              <div class="first-gadget display_flex_center">
                 <img src="${brawler.first_GadgetImage}" alt="${
       brawler.first_Gadget
     }"/>
@@ -69,7 +69,7 @@ export const characterCard = async () => {
               </div>
               ${
                 brawler.second_Gadget
-                  ? `<div class="second-gadget">
+                  ? `<div class="second-gadget display_flex_center">
                       <img src="${brawler.second_GadgetImage}" alt="${brawler.second_Gadget}"/>
                       <h4>${brawler.second_Gadget}</h4>
                       <p class="info-popup">${brawler.second_GadgetDescription}</p>
