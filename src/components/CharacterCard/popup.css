@@ -1,4 +1,4 @@
-.info-popup {
+/* .info-popup {
   background-color: rgba(0, 0, 0, 0.9);
   border-radius: 8px;
   border: 1px solid var(--neon-color, #fff);
@@ -27,4 +27,4 @@
 
   transform: translateY(-35px);
   animation: neon 1.5s infinite alternate;
-}
+} */
