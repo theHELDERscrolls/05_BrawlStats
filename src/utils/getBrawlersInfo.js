@@ -1,10 +1,18 @@
+export let brawlersList = [];
+
 export const fetchBrawlersInfo = async () => {
+  if (brawlers.length > 0) {
+    return brawlers;
+  }
+
   try {
     const res = await fetch("https://api.brawlify.com/v1/brawlers");
     const data = await res.json();
-    return (data.list || data).map((brawler) => ({
+
+    brawlersList = (data.list || data).map((brawler) => ({
       id: brawler.id,
       portrait: `https://raw.githubusercontent.com/Brawlify/CDN/master/brawlers/portraits/${brawler.id}.png`,
+      model: `https://raw.githubusercontent.com/Brawlify/CDN/master/brawlers/model/${brawler.id}.png`,
       name: brawler.name,
       image: brawler.imageUrl,
       emoji: brawler.imageUrl3,
@@ -40,9 +48,13 @@ export const fetchBrawlersInfo = async () => {
       second_GadgetDescription: brawler.gadgets[1]?.descriptionHtml || null,
       second_GadgetImage: brawler.gadgets[1]?.imageUrl || null,
     }));
+
+    return brawlersList;
   } catch (error) {
     console.error(error);
     alert("An error occurred while fetching the data. Please try again later.");
     return [];
   }
 };
+
+// fetchBrawlersInfo().then((data) => console.log(data));

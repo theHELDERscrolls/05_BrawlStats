@@ -1,11 +1,14 @@
 import "./Brawlers.css";
 
 import { pageCleaner } from "../../utils/cleanPage";
-import { characterCard } from "../../components/CharacterCard/CharacterCard";
+//! IMPORTAR FUNCIÓN PARA PINTAR A LOS BRAWLERS
 
 export const Brawlers = async () => {
   const main = document.querySelector("main");
   pageCleaner(main);
-  const cardsHTML = await characterCard();
-  main.appendChild(cardsHTML);
+
+  /* Vamos a crear el section donde irán a pintarse los personajes */
+  const section = document.createElement("section");
+  section.id="brawlers-cards";
+  main.appendChild(section);
 };
