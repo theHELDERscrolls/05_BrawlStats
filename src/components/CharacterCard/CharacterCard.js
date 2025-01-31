@@ -8,11 +8,16 @@ export const characterCard = async () => {
 
   brawlersData.forEach((brawler) => {
     const card = document.createElement("div");
-    card.classList.add("character_card", `${brawler.rarityName.toLowerCase()}`);
+    card.classList.add(
+      "character_card",
+      `${brawler.rarityName.toLowerCase().replace(/\s+/g, "")}`
+    );
 
     card.innerHTML = `
       <div class="portrait_container">
-        <img src="${brawler.portrait}" alt="${brawler.name.toLowerCase()} portrait"/>
+        <img src="${brawler.portrait}" alt="${brawler.name
+      .toLowerCase()
+      .replace(/\s+/g, "")} portrait"/>
         <h3>${brawler.name}</h3>
       </div>
       <p>${brawler.description}</p>

@@ -21,14 +21,15 @@
   --rare: #68fd58;
 }
 
-/* Aspectos generales de las cartas */
+/* General design */
 .character_card {
-  border: 2px solid var(--color-text);
-  border-radius: 10px;
   background: var(--color-background);
-  width: 100%;
+  border-radius: 10px;
+  border: 2px solid var(--color-text);
+  cursor: pointer;
   height: 350px;
   position: relative;
+  width: 100%;
 }
 
 .character_card > p {
@@ -40,43 +41,138 @@
 .portrait_container {
   display: flex;
   position: relative;
+  border-radius: 8px 8px 0 0;
 }
 
 .portrait_container > img {
+  border-top-left-radius: 8px;
   height: 150px;
   width: auto;
-  border-top-left-radius: 8px;
 }
 
 .portrait_container > h3 {
-  position: absolute;
   background: var(--color-text);
-  padding: 5px 10px;
-  border: 3px solid black;
   border-radius: 10px;
-  right: -10px;
+  border: 3px solid black;
   bottom: -10px;
+  padding: 5px 10px;
+  position: absolute;
+  right: -10px;
 }
 
-/*! Aspecto específico de cada clase */
-.character_card::after,
-.character_card::before {
-  content: "";
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background-image: conic-gradient(from var(--angle), transparent, red);
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
-  z-index: -1;
-  padding: 5px;
+/* Portrait design */
+
+.legendary:hover > .portrait_container {
+  background: var(--legendary);
+}
+
+.mythic:hover > .portrait_container {
+  background: var(--mythic);
+}
+
+.epic:hover > .portrait_container {
+  background: var(--epic);
+}
+
+.superrare:hover > .portrait_container {
+  background: var(--superRare);
+}
+
+.rare:hover > .portrait_container {
+  background: var(--rare);
+}
+
+.common:hover > .portrait_container {
+  background: var(--rare);
+}
+
+/* Dynamic border */
+.legendary::after,
+.legendary::before,
+.mythic::after,
+.mythic::before,
+.epic::after,
+.epic::before,
+.superrare::after,
+.superrare::before,
+.rare::after,
+.rare::before,
+.common::after,
+.common::before {
+  background-image: conic-gradient(
+    from var(--angle),
+    transparent 50%,
+    var(--legendary)
+  );
   border-radius: 12px;
+  content: "";
+  height: 100%;
+  left: 50%;
+  opacity: 0;
+  padding: 5px;
+  position: absolute;
+  top: 50%;
+  translate: -50% -50%;
+  width: 100%;
+  z-index: -1;
 
   animation: 3s spin linear infinite;
 }
 
+.mythic::after,
+.mythic::before {
+  background-image: conic-gradient(
+    from var(--angle),
+    transparent 50%,
+    var(--mythic)
+  );
+}
+
+.epic::after,
+.epic::before {
+  background-image: conic-gradient(
+    from var(--angle),
+    transparent 50%,
+    var(--epic)
+  );
+}
+
+.superrare::after,
+.superrare::before {
+  background-image: conic-gradient(
+    from var(--angle),
+    transparent 50%,
+    var(--superRare)
+  );
+}
+
+.rare::after,
+.rare::before,
+.common::after,
+.common::before {
+  background-image: conic-gradient(
+    from var(--angle),
+    transparent 50%,
+    var(--rare)
+  );
+}
+
 .character_card::before {
   filter: blur(1.5rem);
-  opacity: 0.5;
+  opacity: 0;
+}
+
+.legendary:hover::before,
+.legendary:hover::after,
+.mythic:hover::before,
+.mythic:hover::after,
+.epic:hover::before,
+.epic:hover::after,
+.superrare:hover::before,
+.superrare:hover::after,
+.rare:hover::before,
+.rare:hover::after,
+.common:hover::before,
+.common:hover::after {
+  opacity: 1;
 }
