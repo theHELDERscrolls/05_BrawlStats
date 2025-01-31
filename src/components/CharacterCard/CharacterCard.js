@@ -15,7 +15,7 @@ export const characterCard = async () => {
 
     card.innerHTML = `
       <div class="portrait_container">
-        <img src="${brawler.portrait}" alt="${brawler.name
+        <img class="portrait_img" src="${brawler.portrait}" alt="${brawler.name
       .toLowerCase()
       .replace(/\s+/g, "")} portrait"/>
         <h3>${brawler.name}</h3>
@@ -24,4 +24,15 @@ export const characterCard = async () => {
     `;
     characterContainer.appendChild(card);
   });
+
+  /* Añadir función del loader desués de esto
+  Tenemos que seleccionar todas las imágenes de los brawlers con un querySelectorAll
+  y la clase.
+  
+  Iniciamos una variable en 0.
+  
+  Iteramos entre todas esas clases para ver si se han cargado usando un forEach y
+  comprobando la carga con .onload. Hacemos que la variable ++ y cuando esa variable
+  sea === a la longitud de las imágenes del querySelectorAll que desaparezca el
+  loader*/
 };
