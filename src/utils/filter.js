@@ -1,10 +1,7 @@
-import { brawlersList } from "./getBrawlersInfo";
-
 export const filterBrawlers = () => {
   const filter = document.querySelector("#filter");
   const cards = document.querySelectorAll(".character_card");
   const h3 = document.querySelectorAll(".brawler_name");
-  console.log(h3);
 
   filter.addEventListener("change", () => {
 
