@@ -1,0 +1,43 @@
+#filter {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 10px;
+  border: 2px solid var(--color-background);
+  height: 32px;
+  left: 0;
+  margin: auto;
+  outline: none;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  width: 300px;
+}
+
+.option_legendary {
+  background: linear-gradient(
+    90deg,
+    var(--legendary) 0%,
+    var(--color-text) 100%
+  );
+}
+
+.option_mythic {
+  background: linear-gradient(90deg, var(--mythic) 0%, var(--color-text) 100%);
+}
+
+.option_epic {
+  background: linear-gradient(90deg, var(--epic) 0%, var(--color-text) 100%);
+}
+
+.option_superrare {
+  background: linear-gradient(
+    90deg,
+    var(--superRare) 0%,
+    var(--color-text) 100%
+  );
+}
+
+.option_rare {
+  background: linear-gradient(90deg, var(--rare) 0%, var(--color-text) 100%);
+}

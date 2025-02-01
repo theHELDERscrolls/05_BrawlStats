@@ -2,6 +2,8 @@ import "./Brawlers.css";
 
 import { pageCleaner } from "../../utils/cleanPage";
 import { characterCard } from "../../components/CharacterCard/CharacterCard";
+import { selectFilter } from "../../components/Select/Select";
+import { filterBrawlers } from "../../utils/filter";
 
 export const Brawlers = async () => {
   const main = document.querySelector("main");
@@ -12,6 +14,10 @@ export const Brawlers = async () => {
   section.id = "brawlers";
   main.appendChild(section);
 
+  /* Añadimos el "botón" de filtrar */
+  selectFilter();
+
   /* Pintamos las tarjetas de cada personaje */
   await characterCard();
+  filterBrawlers();
 };

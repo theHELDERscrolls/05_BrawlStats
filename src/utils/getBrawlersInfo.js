@@ -1,8 +1,8 @@
 export let brawlersList = [];
 
 export const fetchBrawlersInfo = async () => {
-  if (brawlers.length > 0) {
-    return brawlers;
+  if (brawlersList.length > 0) {
+    return brawlersList;
   }
 
   try {

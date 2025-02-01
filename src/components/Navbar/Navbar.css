@@ -2,7 +2,6 @@ header {
   nav {
     height: 100%;
     width: auto;
-
     ul {
       -webkit-backdrop-filter: blur(4px);
       backdrop-filter: blur(4px);

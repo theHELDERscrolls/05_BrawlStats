@@ -1,10 +1,13 @@
 #brawlers {
-  border: 2px solid red;
+  /* border: 2px solid red; */
   display: grid;
-  grid-template-columns: repeat(auto-fit, 350px);
-  justify-content: center;
   gap: 2em;
-  padding: 2em 10%;
-  width: 100%;
+  grid-template-columns: repeat(auto-fit, 350px);
   height: auto;
+  justify-content: center;
+  padding: 4em 10%;
+  position: relative;
+  width: 100%;
 }
+
+

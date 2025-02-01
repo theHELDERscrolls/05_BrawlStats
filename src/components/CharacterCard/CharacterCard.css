@@ -7,6 +7,15 @@
   }
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 @property --angle {
   syntax: "<angle>";
   initial-value: 0deg;
@@ -27,10 +36,11 @@
   border-radius: 10px;
   border: 2px solid var(--color-text);
   cursor: pointer;
-  height: 350px;
+  min-height: 325px;
   position: relative;
   width: 100%;
 
+  animation: fadeIn 0.5s ease-in-out;
 }
 
 .character_card > p {
@@ -50,7 +60,7 @@
 
 .portrait_container > img {
   border-top-left-radius: 8px;
-  height: 150px;
+  height: 125px;
   width: auto;
 }
 
