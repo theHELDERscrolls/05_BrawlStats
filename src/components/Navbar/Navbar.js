@@ -1,4 +1,4 @@
-import "./Navbar.css";
+import "./navbar.css";
 import { a_simple } from "../Anchors/a_simple";
 
 export const header = () => {

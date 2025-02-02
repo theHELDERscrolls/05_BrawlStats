@@ -3,8 +3,8 @@ import "./style.css";
 import { header } from "./components/Navbar/Navbar";
 import { linkPage } from "./utils/linkPage";
 import { Home } from "./pages/Home/Home";
-import { Brawlers } from "./pages/Brawlers/Brawlers";
-import { GameModes } from "./pages/GameModes/GameModes";
+import { Brawlers } from "./pages/Brawlers/brawlers";
+import { GameModes } from "./pages/GameModes/gameModes";
 
 const init = () => {
   header();

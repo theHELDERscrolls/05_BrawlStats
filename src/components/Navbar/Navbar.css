@@ -60,3 +60,26 @@ header {
   }
 }
 
+@media (max-width: 810px) {
+
+  header {
+    justify-content: space-between;
+    padding: 0 1em;
+  }
+
+  nav {
+    display: none;
+  }
+
+  #web_menu {
+    display: block;
+    background: var(--color-text);
+    border-radius: 10px;
+    padding: 0.5em 1em;
+    width: 50px;
+  }
+
+  #suggest_link {
+    display: none;
+  }
+}

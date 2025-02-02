@@ -1,4 +1,4 @@
-import "./CharacterCard.css";
+import "./characterCard.css";
 
 import { fetchBrawlersInfo } from "../../utils/getBrawlersInfo.js";
 
@@ -24,15 +24,4 @@ export const characterCard = async () => {
     `;
     characterContainer.appendChild(card);
   });
-
-  /* Añadir función del loader desués de esto
-  Tenemos que seleccionar todas las imágenes de los brawlers con un querySelectorAll
-  y la clase.
-  
-  Iniciamos una variable en 0.
-  
-  Iteramos entre todas esas clases para ver si se han cargado usando un forEach y
-  comprobando la carga con .onload. Hacemos que la variable ++ y cuando esa variable
-  sea === a la longitud de las imágenes del querySelectorAll que desaparezca el
-  loader*/
 };

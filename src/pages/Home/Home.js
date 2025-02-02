@@ -1,4 +1,4 @@
-import "./Home.css";
+import "./home.css";
 import { pageCleaner } from "../../utils/cleanPage";
 import { a_img } from "../../components/Anchors/a_img";
 

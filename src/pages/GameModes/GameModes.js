@@ -1,7 +1,7 @@
 import "./GameModes.css";
 
 import { pageCleaner } from "../../utils/cleanPage";
-import { GameModeCard } from "../../components/GameModeCard/GameModeCard";
+import { GameModeCard } from "../../components/GameModeCard/gameModeCard";
 
 export const GameModes = async () => {
   const main = document.querySelector("main");
