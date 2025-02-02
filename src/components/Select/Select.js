@@ -1,7 +1,7 @@
 import "./Select.css";
 
 export const selectFilter = () => {
-  const section = document.getElementById("brawlers");
+  const main = document.querySelector("main");
   const select = document.createElement("select");
   select.id = "filter";
   select.innerHTML = `
@@ -12,5 +12,5 @@ export const selectFilter = () => {
       <option value="superrare">Super Rare</option>
       <option value="rare">Rare</option>
     `;
-  section.appendChild(select);
+  main.appendChild(select);
 };

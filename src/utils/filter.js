@@ -12,6 +12,7 @@ export const filterBrawlers = () => {
 
     switch (filter.value) {
       case "all":
+        cards.forEach((card) => (card.style.display = "none"));
         cards.forEach((card) => (card.style.display = "block"));
         break;
 

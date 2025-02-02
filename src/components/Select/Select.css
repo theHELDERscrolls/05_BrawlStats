@@ -8,10 +8,12 @@
   left: 0;
   margin: auto;
   outline: none;
-  position: absolute;
   right: 0;
   text-align: center;
   width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .option_legendary {

@@ -24,7 +24,7 @@ export const header = () => {
           </li>
         </ul>
       </nav>
-      <a href="mailto:manuhelderrui@gmail.com?subject=Website suggest" id="suggest_link">Suggest</a>
       <img id="web_menu" class="hidden" src="/assets/icons/ham_menu.svg" alt="Menu icon">
+      <a href="mailto:manuhelderrui@gmail.com?subject=Website suggest" id="suggest_link">Suggest</a>
      `;
 };

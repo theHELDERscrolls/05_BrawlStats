@@ -1,16 +1,16 @@
 header {
   nav {
-    height: 100%;
+    height: auto;
     width: auto;
     ul {
       -webkit-backdrop-filter: blur(4px);
       backdrop-filter: blur(4px);
-      background: rgba(18, 18, 18, 0.40);
+      background: rgba(18, 18, 18, 0.4);
       border-radius: 50px;
       border: 1px solid rgba(255, 255, 255, 0.18);
       gap: 2em;
       height: 100%;
-      padding: 0 1em;
+      padding: 1em;
       width: auto;
 
       li {
@@ -59,3 +59,4 @@ header {
     transform: translate(2px, 2px);
   }
 }
+

@@ -53,3 +53,17 @@ footer {
 .hidden {
   display: none;
 }
+
+@media (max-width: 712px) {
+  nav {
+    display: none;
+  }
+
+  #web_menu {
+    display: block;
+    background: var(--color-text);
+    border-radius: 10px;
+    padding: 0.5em 1em;
+    width: 50px;
+  }
+}
