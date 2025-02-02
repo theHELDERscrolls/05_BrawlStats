@@ -1,85 +1,130 @@
-header {
-  nav {
-    height: auto;
-    width: auto;
-    ul {
-      -webkit-backdrop-filter: blur(4px);
-      backdrop-filter: blur(4px);
-      background: rgba(18, 18, 18, 0.4);
-      border-radius: 50px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      gap: 2em;
-      height: 100%;
-      padding: 1em;
-      width: auto;
-
-      li {
-        height: 100%;
-        width: 100%;
-
-        a {
-          color: var(--color-text);
-          text-shadow: 0px 0px 3px var(--color-background);
-
-          transition: all ease-in-out 0.2s;
-
-          &:hover {
-            color: var(--color-accent);
-            transform: scale(1.1);
-          }
-
-          &:active {
-            transform: scale(0.9);
-          }
-        }
-      }
-    }
-  }
+#web_title_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2em;
+  width: auto;
+  height: auto;
 }
 
 #web_logo {
-  filter: drop-shadow(0 0 5px var(--color-text));
-  height: 8vh;
+  height: 10vh;
   width: auto;
 }
 
-#suggest_link {
-  background-color: #febe22;
-  border-radius: 10px;
-  border: 2px solid var(--color-background);
-  box-shadow: 2px 2px 0px var(--color-background);
-  color: var(--color-background);
-  padding: 0.5em;
-
-  transition: all ease-in-out 0.2s;
-
-  &:active {
-    background-color: #f01919;
-    box-shadow: 0px 0px 0px var(--color-background);
-    transform: translate(2px, 2px);
-  }
+#web_title {
+  color: #febf10;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+  font-size: 4em;
 }
 
-@media (max-width: 810px) {
+#web_menu {
+  background: var(--color-text);
+  border-radius: 10px;
+  padding: 0.5em 1em;
+  width: 60px;
+  height: auto;
+  border: 2px solid var(--color-background);
+  box-shadow: 2px 2px 0px var(--color-background);
 
-  header {
-    justify-content: space-between;
-    padding: 0 1em;
-  }
+  transition: all 0.1s ease-in-out;
+}
 
-  nav {
-    display: none;
-  }
+#web_menu:hover {
+  background-color: #b2b2b2;
+}
 
-  #web_menu {
-    display: block;
-    background: var(--color-text);
-    border-radius: 10px;
-    padding: 0.5em 1em;
-    width: 50px;
-  }
+#web_menu:active {
+  box-shadow: 0px 0px 0px var(--color-background);
+  transform: translate(2px, 2px);
+}
 
-  #suggest_link {
-    display: none;
-  }
+#web_nav {
+  position: fixed;
+  background-color: var(--color-background);
+  top: 0;
+  right: 0;
+  width: 40%;
+  height: 100vh;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 50px 0 0 50px;
+}
+
+#web_nav > h3 {
+  border: 2px solid red;
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text);
+  font-weight: 100;
+  font-size: 3em;
+}
+
+#web_nav > ul {
+  border: 2px solid green;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#web_nav > ul > li {
+  /* border: 2px solid blue; */
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#web_nav > ul > li > a {
+  /* border: 2px solid yellow; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+  color: var(--color-accent);
+
+  transition: all 0.2s ease-in-out;
+}
+
+#web_nav > ul > li > a:hover {
+  font-size: 2em;
+}
+
+#web_nav > ul > li > a:active {
+  font-size: 1.5em;
+}
+
+#web_nav > ul > li:last-child > a {
+  border-radius: 10px;
+  border: 2px solid var(--color-text);
+  width: auto;
+  height: auto;
+  padding: 0.5em 3em;
+  background: var(--color-accent);
+  color: var(--color-background);
+  box-shadow: 2px 2px 0px var(--color-text);
+
+  transition: all 0.1s ease-in-out;
+}
+
+#web_nav > ul > li:last-child > a:hover {
+  background: #ee272b;
+  font-size: 1.5em;
+}
+
+#web_nav > ul > li:last-child > a:active {
+  box-shadow: 0px 0px 0px var(--color-text);
+  transform: translate(2px, 2px);
 }

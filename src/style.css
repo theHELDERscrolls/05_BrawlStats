@@ -26,12 +26,12 @@ body {
 }
 
 header {
+  border: 2px solid blue;
   align-items: center;
   display: flex;
   height: 10vh;
-  justify-content: space-around;
-  padding: 1em;
-  position: relative;
+  justify-content: space-between;
+  padding: 1em 2em;
   width: 100%;
 }
 
@@ -41,9 +41,9 @@ main {
 }
 
 footer {
-  height: 10vh;
+  height: auto;
   width: 100%;
-}
+} 
 
 .display_flex_center {
   align-items: center;

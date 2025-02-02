@@ -53,7 +53,7 @@
   box-shadow: 2px 2px 0px var(--color-background);
   padding: 0.25em 1.5em;
 
-  transition: all ease-in-out 0.2s;
+  transition: all ease-in-out 0.1s;
 
   &:hover {
     background-color: #b2b2b2;
